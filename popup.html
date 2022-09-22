@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>passExtension</title>
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="w-80 h-80 bg-slate-400 flex justify-center items-center">
+    <div class="h-5/6 w-11/12 grid grid-rows-5 gap-1.5">
+      <input
+        id="hash-input"
+        type="text"
+        placeholder="Enter domain name"
+        class="rounded-md text-base px-5"
+      />
+
+      <input
+        id="hash-btn"
+        type="button"
+        value="HASH"
+        class="border-2 bg-gray-300 active:bg-gray-200 rounded-lg"
+      />
+
+      <div class="flex flex-col items-center justify-center">
+        <p class="select-none">DOMAIN</p>
+        <p id="domain-output" class="text-base h-6 underline"></p>
+      </div>
+
+      <input
+        id="hash-output"
+        type="text"
+        class="rounded-md text-base px-5"
+        readonly
+      />
+
+      <input
+        type="button"
+        value="COPY"
+        class="border-2 bg-gray-300 active:bg-gray-200 rounded-lg"
+      />
+    </div>
+  </body>
+  <script import="module" src="bundle.js"></script>
+</html>
