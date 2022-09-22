@@ -30,8 +30,8 @@ const output = (domain, hashedDomain) => {
 };
 
 document.getElementById("hash-btn").addEventListener("click", () => {
-  const hashInput = document.getElementById("hash-input");
-  const domain = hashInput.value;
+  const textInput = document.getElementById("hash-input");
+  const domain = textInput.value;
   const hashedDomain = hash(domain);
   output(domain, hashedDomain);
 });
