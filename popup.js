@@ -24,16 +24,26 @@ const hash = (domain) => {
   return hash;
 };
 
+const hashOutput = document.getElementById("hash-output");
+const textInput = document.getElementById("hash-input");
+
 const output = (domain, hashedDomain) => {
   document.getElementById("domain-output").innerHTML = domain;
-  document.getElementById("hash-output").value = hashedDomain;
+  hashOutput.value = hashedDomain;
 };
 
-document.getElementById("hash-btn").addEventListener("click", () => {
-  const textInput = document.getElementById("hash-input");
+const hashManually = () => {
   const domain = textInput.value;
   const hashedDomain = hash(domain);
   output(domain, hashedDomain);
+};
+
+document.getElementById("hash-btn").addEventListener("click", hashManually);
+textInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") hashManually();
+});
+document.getElementById("copy-btn").addEventListener("click", () => {
+  navigator.clipboard.writeText(hashOutput.value);
 });
 
 window.onload = async () => {
